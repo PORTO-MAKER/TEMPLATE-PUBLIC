@@ -27,6 +27,15 @@ export default async function Image() {
                     justifyContent: "center",
                 }}
             >
+                <img
+                    src={datas.userData.image}
+                    alt={datas.userData.name}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                    }}
+                />
                 {datas.userData.name}
             </div>
         )
