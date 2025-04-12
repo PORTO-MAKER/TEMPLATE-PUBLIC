@@ -20,9 +20,8 @@ export async function generateMetadata() {
         description:
             "Porto Maker is the best platform to build your professional online portfolio. Showcase your skills and projects with ease and stand out in the job market.",
         metadataBase: new URL(`https://${host}`),
-        openGraph: {
-            images: ["/opengraph-image.png"],
-        },
+
+        images: ["/opengraph-image.png"],
     };
 }
 

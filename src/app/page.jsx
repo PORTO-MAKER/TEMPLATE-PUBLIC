@@ -14,9 +14,8 @@ export const generateMetadata = async () => {
         },
         description: datas.userDetailData.overview,
         metadataBase: new URL(`https://${host}`),
-        openGraph: {
-            images: ["/opengraph-image.png"],
-        },
+
+        images: ["/opengraph-image.png"],
     };
 };
 
