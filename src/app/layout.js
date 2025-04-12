@@ -16,6 +16,7 @@ export const metadata = {
     description:
         "Porto Maker is the best platform to build your professional online portfolio. Showcase your skills and projects with ease and stand out in the job market.",
     metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
+    images: ["/opengraph-image.png"],
 };
 
 export default function RootLayout({ children }) {
