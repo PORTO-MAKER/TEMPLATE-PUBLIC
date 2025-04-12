@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Layout } from "@/components/templates";
+import { headers } from "next/headers";
 
 const poppins = Poppins({
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -8,16 +9,22 @@ const poppins = Poppins({
     subsets: ["latin"],
 });
 
-export const metadata = {
-    title: {
-        default: "Portfolio",
-        template: "%s | Portfolio",
-    },
-    description:
-        "Porto Maker is the best platform to build your professional online portfolio. Showcase your skills and projects with ease and stand out in the job market.",
-    metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
-    images: ["/opengraph-image.png"],
-};
+export async function generateMetadata() {
+    const headersList = await headers();
+    const host = headersList.get("host");
+    return {
+        title: {
+            default: "Portfolio",
+            template: "%s | Portfolio",
+        },
+        description:
+            "Porto Maker is the best platform to build your professional online portfolio. Showcase your skills and projects with ease and stand out in the job market.",
+        metadataBase: new URL(`https://${host}`),
+        openGraph: {
+            images: ["/opengraph-image.png"],
+        },
+    };
+}
 
 export default function RootLayout({ children }) {
     return (

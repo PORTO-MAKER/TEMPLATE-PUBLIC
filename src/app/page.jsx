@@ -13,8 +13,10 @@ export const generateMetadata = async () => {
             template: `%s | Portfolio`,
         },
         description: datas.userDetailData.overview,
-        metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
-        images: ["/opengraph-image.png"],
+        metadataBase: new URL(`https://${host}`),
+        openGraph: {
+            images: ["/opengraph-image.png"],
+        },
     };
 };
 
