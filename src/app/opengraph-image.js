@@ -36,7 +36,6 @@ export default async function Image() {
                         objectFit: "cover",
                     }}
                 />
-                {datas.userData.name}
             </div>
         )
     );
