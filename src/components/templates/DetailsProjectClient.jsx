@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import { Carousel } from "@/components/molecules";
 import Link from "next/link";
 
@@ -8,40 +7,17 @@ const DetailsProjectClient = ({ datas }) => {
     return (
         <div>
             <div className="w-full h-[85vh] flex flex-col gap-6 md:gap-10 justify-center items-center bg-[url('../assets/heroes.jpg')] dark:bg-[url('../assets/heroesDark.jpg')] bg-cover bg-scroll">
-                <motion.div
-                    initial={{ opacity: 0, translateX: -100 }}
-                    whileInView={{
-                        opacity: 1,
-                        translateX: 0,
-                    }}
-                    transition={{ duration: 0.5 }}
-                >
+                <div>
                     <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl tracking-wide dark:text-white">
                         {datas.name}
                     </h1>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, translateX: -100 }}
-                    whileInView={{
-                        opacity: 1,
-                        translateX: 0,
-                    }}
-                    transition={{ duration: 1 }}
-                    className="p-1 lg:w-[50%] text-center"
-                >
+                </div>
+                <div className="p-1 lg:w-[50%] text-center">
                     <p className="text-sm md:text-base lg:text-2xl dark:text-white">
                         {datas.overview}
                     </p>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, translateX: -100 }}
-                    whileInView={{
-                        opacity: 1,
-                        translateX: 0,
-                    }}
-                    transition={{ duration: 1 }}
-                    className="bg-violet-500 w-40 h-12 hover:bg-violet-500/80 lg:text-xl font-bold rounded-lg text-white"
-                >
+                </div>
+                <div className="bg-violet-500 w-40 h-12 hover:bg-violet-500/80 lg:text-xl font-bold rounded-lg text-white">
                     <Link
                         href={`${datas.linkProject}`}
                         target="_blank"
@@ -49,59 +25,30 @@ const DetailsProjectClient = ({ datas }) => {
                     >
                         LIVE LINK
                     </Link>
-                </motion.div>
+                </div>
             </div>
             <div className="w-full h-full px-2 py-10 lg:p-7 flex flex-col justify-center items-center dark:text-white dark:bg-[#121212] overflow-x-hidden">
                 <div className="w-[90%] lg:w-[55%] max-w-full space-y-20 overflow-hidden">
                     <Carousel datas={datas.mediaLinks} />
                     <div className="space-y-6">
-                        <motion.div
-                            initial={{ opacity: 0, translateX: -100 }}
-                            whileInView={{
-                                opacity: 1,
-                                translateX: 0,
-                            }}
-                            transition={{ duration: 1 }}
-                        >
+                        <div>
                             <h2 className="font-bold text-lg lg:text-xl tracking-wider">
                                 PROJECT OVERVIEW
                             </h2>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, translateX: 100 }}
-                            whileInView={{
-                                opacity: 1,
-                                translateX: 0,
-                            }}
-                            transition={{ duration: 1 }}
-                        >
+                        </div>
+                        <div>
                             <p className="text-sm lg:text-base">
                                 {datas.projectOverview}
                             </p>
-                        </motion.div>
+                        </div>
                     </div>
                     <div className="space-y-6">
-                        <motion.div
-                            initial={{ opacity: 0, translateX: -100 }}
-                            whileInView={{
-                                opacity: 1,
-                                translateX: 0,
-                            }}
-                            transition={{ duration: 1 }}
-                        >
+                        <div>
                             <h2 className="font-bold text-lg lg:text-xl tracking-wider">
                                 TOOLS USED
                             </h2>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, translateX: 100 }}
-                            whileInView={{
-                                opacity: 1,
-                                translateX: 0,
-                            }}
-                            transition={{ duration: 1 }}
-                            className="flex gap-4 flex-wrap"
-                        >
+                        </div>
+                        <div className="flex gap-4 flex-wrap">
                             {datas.toolsUsed?.map((tool, index) => (
                                 <div
                                     key={index}
@@ -110,30 +57,15 @@ const DetailsProjectClient = ({ datas }) => {
                                     {tool}
                                 </div>
                             ))}
-                        </motion.div>
+                        </div>
                     </div>
                     <div className="space-y-6">
-                        <motion.div
-                            initial={{ opacity: 0, translateX: -100 }}
-                            whileInView={{
-                                opacity: 1,
-                                translateX: 0,
-                            }}
-                            transition={{ duration: 1 }}
-                        >
+                        <div>
                             <h2 className="font-bold text-lg lg:text-xl tracking-wider">
                                 SEE LIVE
                             </h2>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, translateX: 100 }}
-                            whileInView={{
-                                opacity: 1,
-                                translateX: 0,
-                            }}
-                            transition={{ duration: 1 }}
-                            className="flex gap-4"
-                        >
+                        </div>
+                        <div className="flex gap-4">
                             <div className="bg-violet-500 w-24 h-12 lg:w-40 hover:bg-violet-500/80 lg:text-xl font-bold rounded-lg text-white">
                                 <Link
                                     href={datas.linkProject}
@@ -151,7 +83,7 @@ const DetailsProjectClient = ({ datas }) => {
                                     GO BACK
                                 </Link>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>
