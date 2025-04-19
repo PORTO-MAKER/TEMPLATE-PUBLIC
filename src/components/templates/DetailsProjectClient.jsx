@@ -6,7 +6,7 @@ import Link from "next/link";
 const DetailsProjectClient = ({ datas }) => {
     return (
         <div>
-            <div className="w-full h-[85vh] flex flex-col gap-6 md:gap-10 justify-center items-center bg-[url('../assets/heroes.jpg')] dark:bg-[url('../assets/heroesDark.jpg')] bg-cover bg-scroll">
+            <div className="w-full h-[85vh] flex flex-col gap-6 md:gap-10 justify-center items-center bg-[url('/heroes.jpg')] dark:bg-[url('/heroesDark.jpg')] bg-cover bg-scroll">
                 <div>
                     <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl tracking-wide dark:text-white">
                         {datas.name}

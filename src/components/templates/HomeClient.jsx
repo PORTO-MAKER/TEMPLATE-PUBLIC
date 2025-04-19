@@ -18,7 +18,7 @@ const HomeClient = ({ account }) => {
 
     return (
         <div>
-            <div className="w-full min-h-svh flex flex-col gap-6 md:gap-10 justify-center items-center bg-[url('../assets/heroes.jpg')] dark:bg-[url('../assets/heroesDark.jpg')] bg-cover bg-fixed relative">
+            <div className="w-full min-h-svh flex flex-col gap-6 md:gap-10 justify-center items-center bg-[url('/heroes.jpg')] dark:bg-[url('/heroesDark.jpg')] bg-cover bg-fixed relative">
                 <div>
                     <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl tracking-wide dark:text-white text-center">
                         HEY, I&apos;M {account.userData.name}
@@ -163,7 +163,7 @@ const HomeClient = ({ account }) => {
                     </div>
                 </>
             </div>
-            <div className="w-full h-full px-2 py-10 lg:p-7 flex flex-col gap-10 items-center bg-[url('../assets/heroes.jpg')] dark:bg-[url('../assets/heroesDark.jpg')] bg-cover bg-fixed dark:text-white overflow-hidden">
+            <div className="w-full h-full px-2 py-10 lg:p-7 flex flex-col gap-10 items-center bg-[url('/heroes.jpg')] dark:bg-[url('/heroesDark.jpg')] bg-cover bg-fixed dark:text-white overflow-hidden">
                 <div className="inline-block relative mt-10 lg:mt-0">
                     <h2 className="font-bold text-2xl lg:text-3xl tracking-wider">
                         CONTACT
