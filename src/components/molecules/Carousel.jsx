@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const Carousel = ({ datas }) => {
+const Carousel = ({ datas, customClass }) => {
     return (
         <Swiper
             modules={[Navigation, Pagination, A11y]}
@@ -16,7 +16,7 @@ const Carousel = ({ datas }) => {
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
-            className="w-full h-[500px]"
+            className={`${customClass} w-full h-[500px]`}
         >
             <SwiperSlide>
                 <img

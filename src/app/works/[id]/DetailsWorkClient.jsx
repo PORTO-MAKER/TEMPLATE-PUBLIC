@@ -1,8 +1,113 @@
-const DetailsWorkClient = () => {
+"use client";
+
+import { SkillBadge } from "@/components/atoms";
+import { Carousel } from "@/components/molecules";
+import {
+    AnimatedPageContainer,
+    AnimatedSection,
+    AnimatedText,
+} from "@/components/organisms";
+import {
+    bounceAnimation,
+    slideInLeft,
+    slideInRight,
+    staggerContainer,
+} from "@/utils";
+import { motion } from "motion/react";
+import Link from "next/link";
+
+const DetailsWorkClient = ({ datas }) => {
     return (
-        <div>
-            <p>test</p>
-        </div>
+        <AnimatedPageContainer>
+            <section className="relative px-6 py-24 md:py-32 overflow-hidden">
+                <motion.div
+                    variants={slideInLeft}
+                    className="absolute top-0 left-0 w-64 h-64 bg-yellow-400 rounded-br-3xl -translate-x-1/4 -translate-y-1/4 rotate-12"
+                ></motion.div>
+                <motion.div
+                    variants={slideInRight}
+                    className="absolute bottom-0 right-0 w-48 h-48 bg-red-500 rounded-tl-3xl translate-x-1/4 translate-y-1/4 -rotate-12"
+                ></motion.div>
+
+                <div className="container relative mx-auto max-w-5xl">
+                    <AnimatedText className="text-6xl md:text-8xl font-black mb-6 leading-tight">
+                        {datas.name}
+                    </AnimatedText>
+                    <motion.p
+                        variants={bounceAnimation}
+                        animate="bounce"
+                        className="text-xl md:text-2xl max-w-2xl mb-8 border-4 border-black bg-yellow-300 p-4 rotate-1"
+                    >
+                        {datas.overview}
+                    </motion.p>
+                </div>
+            </section>
+            <AnimatedSection className="px-6 py-16 bg-blue-100">
+                <div className="container mx-auto max-w-5xl space-y-4">
+                    <h2 className="text-4xl md:text-5xl font-black">
+                        Image & Video
+                    </h2>
+                    <Carousel
+                        datas={datas.mediaLinks}
+                        customClass={
+                            "border-4 border-black p-3 shadow-[4px_4px_0px_0px_rgba(0,0,0)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0)] transition-all"
+                        }
+                    />
+                </div>
+            </AnimatedSection>
+            <AnimatedSection className="px-6 py-16 min-h-[400px]">
+                <div className="container mx-auto max-w-5xl">
+                    <AnimatedText className="text-4xl font-black mb-12">
+                        Tools Used
+                    </AnimatedText>
+                    <motion.div
+                        initial="hidden"
+                        animate="show"
+                        variants={staggerContainer}
+                        className="flex flex-wrap gap-3"
+                    >
+                        {datas.toolsUsed.map((tech, i) => (
+                            <SkillBadge
+                                name={tech}
+                                color={
+                                    i % 6 === 0
+                                        ? "bg-yellow-300"
+                                        : i % 6 === 1
+                                        ? "bg-purple-300"
+                                        : i % 6 === 2
+                                        ? "bg-blue-300"
+                                        : i % 6 === 3
+                                        ? "bg-green-300"
+                                        : i % 6 === 4
+                                        ? "bg-red-300"
+                                        : "bg-orange-300"
+                                }
+                                key={i}
+                            />
+                        ))}
+                    </motion.div>
+                </div>
+            </AnimatedSection>
+            <AnimatedSection className="px-6 py-16 bg-yellow-400 border-y-8 border-black">
+                <div className="container mx-auto max-w-5xl text-center">
+                    <AnimatedText className="text-4xl md:text-5xl font-black mb-6">
+                        Visit My Website
+                    </AnimatedText>
+                    <motion.div
+                        variants={bounceAnimation}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        <Link
+                            href={`${datas.linkProject}`}
+                            className="bg-black text-white border-4 border-black hover:bg-white hover:text-black text-lg px-8 py-6 h-auto rounded-none shadow-[6px_6px_0px_0px_rgba(0,0,0)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0)] transition-all inline-flex items-center"
+                        >
+                            Click Here
+                        </Link>
+                    </motion.div>
+                </div>
+            </AnimatedSection>
+        </AnimatedPageContainer>
     );
 };
 
