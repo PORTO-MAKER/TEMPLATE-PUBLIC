@@ -6,6 +6,7 @@ import Input from "./Input";
 import Textarea from "./Textarea";
 import Button from "./Button";
 import Errors from "./Errors";
+import SkillBadge from "./SkillBadge";
 
 export {
     Spinner,
@@ -16,5 +17,6 @@ export {
     Input,
     Textarea,
     Button,
+    SkillBadge,
     Errors,
 };

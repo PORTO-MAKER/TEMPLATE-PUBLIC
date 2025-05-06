@@ -1,10 +1,13 @@
-import { getUser } from "@/utils";
-import { FooterClient } from ".";
+import { FooterClientOne, FooterClientTwo } from ".";
 
-const Footer = async ({ host }) => {
-    const datas = await getUser(host);
+const number = 2;
 
-    return <FooterClient account={datas} />;
+const Footer = async ({ datas }) => {
+    return number === 1 ? (
+        <FooterClientOne account={datas} />
+    ) : (
+        <FooterClientTwo account={datas} />
+    );
 };
 
 export default Footer;

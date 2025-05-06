@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export const useGlobalHooks = () => {
     const [loadingButton, setLoadingButton] = useState(false);
     const [error, setError] = useState(false);
     const [hamburger, setHamburger] = useState(false);
     const [hostname, setHostname] = useState("");
+    const pathname = usePathname();
 
     return {
         hamburger,
@@ -17,5 +19,6 @@ export const useGlobalHooks = () => {
         setLoadingButton,
         hostname,
         setHostname,
+        pathname,
     };
 };

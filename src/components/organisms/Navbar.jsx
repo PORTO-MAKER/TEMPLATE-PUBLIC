@@ -1,10 +1,13 @@
-import { getUser } from "@/utils";
-import { NavbarClient } from ".";
+import { NavbarClientOne, NavbarClientTwo } from ".";
 
-const Navbar = async ({ host }) => {
-    const datas = await getUser(host);
+const number = 2;
 
-    return <NavbarClient account={datas} />;
+const Navbar = async ({ datas }) => {
+    return number === 1 ? (
+        <NavbarClientOne account={datas} />
+    ) : (
+        <NavbarClientTwo account={datas} />
+    );
 };
 
 export default Navbar;

@@ -1,4 +1,4 @@
-import { navbarPattern } from "./navbarPattern.js";
+import { navbarPatternOne, navbarPatternTwo } from "./navbarPattern.js";
 import { handleButton, handleSubmitData } from "./handleButton.js";
 import { skillPattern } from "./skillPattern.js";
 import { socmedPattern } from "./socmedPattern.js";
@@ -6,7 +6,8 @@ import { formPattern } from "./formPattern.js";
 import { errorOptions } from "./errorOptions.js";
 
 export {
-    navbarPattern,
+    navbarPatternOne,
+    navbarPatternTwo,
     handleButton,
     skillPattern,
     socmedPattern,

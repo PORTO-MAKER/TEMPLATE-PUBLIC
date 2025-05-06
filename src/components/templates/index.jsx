@@ -1,5 +1,5 @@
 import Layout from "./Layout";
-import HomeClient from "./HomeClient";
-import DetailsProjectClient from "./DetailsProjectClient";
+import HomeClientOne from "./HomeClientOne";
+import HomeClientTwo from "./HomeClientTwo";
 
-export { Layout, HomeClient, DetailsProjectClient };
+export { Layout, HomeClientOne, HomeClientTwo };

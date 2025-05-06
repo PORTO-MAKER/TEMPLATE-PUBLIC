@@ -13,7 +13,7 @@ import { useGlobalHooks } from "@/hooks";
 import { SendEmailJsService } from "@/services";
 import { Form } from "@/components/organisms";
 
-const HomeClient = ({ account }) => {
+const HomeClientOne = ({ account }) => {
     const { loadingButton, setLoadingButton } = useGlobalHooks();
 
     return (
@@ -33,11 +33,11 @@ const HomeClient = ({ account }) => {
                     <ul className="flex gap-10">
                         {account.userDetailData &&
                             socmedPattern.map(
-                                (column, i) =>
+                                (column) =>
                                     account.userDetailData.socialMedia[
                                         column.key
                                     ] && (
-                                        <li key={i}>
+                                        <li key={column.id}>
                                             <Link
                                                 href={
                                                     account.userDetailData
@@ -197,4 +197,4 @@ const HomeClient = ({ account }) => {
     );
 };
 
-export default HomeClient;
+export default HomeClientOne;

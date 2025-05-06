@@ -1,6 +1,6 @@
-import DetailsProjectClient from "./DetailsProjectClient";
 import { getUser, getDetailsProject } from "@/utils";
 import { headers } from "next/headers";
+import DetailsWorkClient from "./DetailsWorkClient";
 
 export const generateMetadata = async ({ params }) => {
     const headersList = await headers();
@@ -15,7 +15,7 @@ export const generateMetadata = async ({ params }) => {
     };
 };
 
-const DetailsProjectPage = async ({ params }) => {
+const DetailsWork = async ({ params }) => {
     const headersList = await headers();
     const host = headersList.get("host");
     const { id } = await params;
@@ -23,7 +23,7 @@ const DetailsProjectPage = async ({ params }) => {
     const username = await getUser(host);
     const datas = await getDetailsProject(username.userData.username, id);
 
-    return <DetailsProjectClient datas={datas} />;
+    return <DetailsWorkClient datas={datas} />;
 };
 
-export default DetailsProjectPage;
+export default DetailsWork;

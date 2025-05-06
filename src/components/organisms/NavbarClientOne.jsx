@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { Navlink } from "../molecules";
 import { useGlobalHooks } from "@/hooks";
-import { handleButton, navbarPattern } from "@/patterns";
+import { handleButton, navbarPatternOne } from "@/patterns";
 import { RxHamburgerMenu } from "react-icons/rx";
 // import { GoMoon } from "react-icons/go";
 // import { FaRegSun } from "react-icons/fa6";
 
-const NavbarClient = ({ account }) => {
+const NavbarClientOne = ({ account }) => {
     const { hamburger, setHamburger } = useGlobalHooks();
 
     return (
@@ -30,8 +30,8 @@ const NavbarClient = ({ account }) => {
                     } absolute top-full right-0 lg:relative w-full lg:w-auto text-end lg:text-inherit bg-white dark:bg-black lg:block`}
                 >
                     <ul className="flex lg:gap-5 flex-col lg:flex-row">
-                        {navbarPattern.map((item, index) => (
-                            <Navlink key={index} href={item.href}>
+                        {navbarPatternOne.map((item) => (
+                            <Navlink key={item.id} href={item.href}>
                                 {item.title}
                             </Navlink>
                         ))}
@@ -63,4 +63,4 @@ const NavbarClient = ({ account }) => {
     );
 };
 
-export default NavbarClient;
+export default NavbarClientOne;

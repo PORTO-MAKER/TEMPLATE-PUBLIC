@@ -6,7 +6,8 @@ import {
 import { cache } from "react";
 
 export const getUser = cache(async (host) => {
-    const serverName = await GetNameUserService(host);
+    // const serverName = await GetNameUserService(host);
+    const serverName = await GetNameUserService("testbug.portoku.live");
     const username = await UserAccountService(serverName);
 
     return username;

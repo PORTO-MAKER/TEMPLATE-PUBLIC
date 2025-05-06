@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Layout } from "@/components/templates";
 import { headers } from "next/headers";
+import { getUser } from "@/utils";
 
 const poppins = Poppins({
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -12,13 +13,14 @@ const poppins = Poppins({
 export async function generateMetadata() {
     const headersList = await headers();
     const host = headersList.get("host");
+    const datas = await getUser(host);
+
     return {
         title: {
-            default: "Portfolio",
+            default: `${datas.userData.name} | Portfolio`,
             template: "%s | Portfolio",
         },
-        description:
-            "Porto Maker is the best platform to build your professional online portfolio. Showcase your skills and projects with ease and stand out in the job market.",
+        description: datas.userDetailData.overview,
         metadataBase: new URL(`https://${host}`),
         images: ["/opengraph-image.png"],
         icons: {

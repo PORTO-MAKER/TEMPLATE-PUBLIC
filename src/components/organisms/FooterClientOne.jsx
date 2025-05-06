@@ -2,7 +2,7 @@ import { FaCopyright } from "react-icons/fa";
 import Link from "next/link";
 import { socmedPattern } from "@/patterns";
 
-const FooterClient = ({ account }) => {
+const FooterClientOne = ({ account }) => {
     return (
         <div className="h-[363px] bg-white flex dark:bg-black items-center justify-center dark:text-white">
             <div className="w-full lg:w-[60%] flex flex-col">
@@ -16,11 +16,11 @@ const FooterClient = ({ account }) => {
                     <ol className="space-y-3">
                         {account.userDetailData &&
                             socmedPattern.map(
-                                (column, i) =>
+                                (column) =>
                                     account.userDetailData.socialMedia[
                                         column.key
                                     ] && (
-                                        <li key={i}>
+                                        <li key={column.id}>
                                             <Link
                                                 href={
                                                     account.userDetailData
@@ -44,4 +44,4 @@ const FooterClient = ({ account }) => {
     );
 };
 
-export default FooterClient;
+export default FooterClientOne;
