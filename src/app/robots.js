@@ -1,10 +1,18 @@
-export default function robots() {
+import { GetNameUserService } from "@/services";
+import { headers } from "next/headers";
+
+export default async function robots() {
+    const headersList = await headers();
+    const host = headersList.get("host");
+
+    const serverName = await GetNameUserService(host);
+
     return {
         rules: [
             {
                 userAgent: "*",
             },
         ],
-        sitemap: `${process.env.NEXT_PUBLIC_BASE_URL}/sitemap.xml`,
+        sitemap: `${serverName}/sitemap.xml`,
     };
 }
