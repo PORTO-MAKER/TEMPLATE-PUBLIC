@@ -7,7 +7,8 @@ import { headers } from "next/headers";
 
 export default async function sitemap() {
     const headersList = await headers();
-    const host = headersList.get("host");
+    // const host = headersList.get("host");
+    const host = "testbug.portoku.live";
 
     const serverName = await GetNameUserService(host);
     const username = await UserAccountService(serverName);
@@ -15,16 +16,16 @@ export default async function sitemap() {
 
     const projects = datas.map((data) => {
         return {
-            url: `${serverName}/projects/${data._id}`,
+            url: `https://${host}/projects/${data._id}`,
         };
     });
 
     return [
         {
-            url: `${serverName}`,
+            url: `https://${host}`,
         },
         {
-            url: `${serverName}/projects`,
+            url: `https://${host}/projects`,
         },
         ...projects,
     ];

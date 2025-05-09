@@ -1,4 +1,4 @@
-import { AlertForm } from "@/components/atoms";
+import { AlertForm } from "@/contributors/testname/components/atoms";
 import { POST_DATA } from "../api";
 
 export const SendEmailJsService = async (data, reset, setLoading, username) => {

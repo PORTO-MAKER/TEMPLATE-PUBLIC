@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Contributing to TEMPLATE-PUBLIC
+Thank you for contributing to this project! Follow the steps below to set up the project and start coding. Please adhere to the contribution rules to ensure a smooth collaboration.
+Setup Instructions
 
-## Getting Started
+Clone the Repository
+git clone https://github.com/PORTO-MAKER/TEMPLATE-PUBLIC.git
 
-First, run the development server:
+Install DependenciesNavigate to the project directory and install the required packages:
+npm install
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Create Environment FileCreate a .env file in the root directory and add the following environment variables:
+NEXT_PUBLIC_BASE_URL=https://portoku.live
+NEXT_PUBLIC_BASE_URL_BE=https://portoku.live/api/v1
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Contribution Rules
+To keep the project organized, please follow these rules when contributing:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Component Placement
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Place your components in the contributors/yourname folder (e.g., contributors/johndoe).
+Use your GitHub username or a unique identifier as the folder name.
 
-## Learn More
+Update Layout
 
-To learn more about Next.js, take a look at the following resources:
+Modify layout.js to include your custom layout components.
+Ensure your changes align with the project's structure and do not disrupt existing functionality.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create Your App Folder
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a folder named yourname inside the app directory (e.g., app/johndoe).
+This folder will contain your routes and page components.
 
-## Deploy on Vercel
+Redirect to Your Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Set up routing to point to your components in the app/yourname folder.
+Ensure proper navigation and functionality for your routes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Getting Started
+
+After completing the setup and following the rules, start the development server:npm run dev
+
+Test your components and ensure they work as expected.
+
+Happy Coding!
+If you have questions or need assistance, feel free to open an issue or contact the maintainers. We appreciate your contributions!

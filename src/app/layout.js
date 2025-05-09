@@ -1,8 +1,8 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Layout } from "@/components/templates";
+import { Layout } from "@/contributors/testname/components/templates";
 import { headers } from "next/headers";
-import { getUser } from "@/utils";
+import { getUser } from "@/contributors/testname/utils";
 
 const poppins = Poppins({
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -37,6 +37,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en" className="scroll-smooth">
             <body className={`${poppins.className} antialiased`}>
+                {/* change Layout component to your component */}
                 <Layout>{children}</Layout>
             </body>
         </html>
