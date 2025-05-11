@@ -1,14 +1,9 @@
 import DetailsProjectClient from "./DetailsProjectClient";
-import { getUser, getDetailsProject } from "@/contributors/testname/utils";
-import { headers } from "next/headers";
+import { getDetailsProject } from "@/templates/testname/utils";
 
 export const generateMetadata = async ({ params }) => {
-    const headersList = await headers();
-    const host = headersList.get("host");
-
     const { id } = await params;
-    const username = await getUser(host);
-    const datas = await getDetailsProject(username.userData.username, id);
+    const datas = await getDetailsProject(id);
 
     return {
         title: datas.name,
@@ -17,12 +12,9 @@ export const generateMetadata = async ({ params }) => {
 };
 
 const DetailsProjectPage = async ({ params }) => {
-    const headersList = await headers();
-    const host = headersList.get("host");
     const { id } = await params;
 
-    const username = await getUser(host);
-    const datas = await getDetailsProject(username.userData.username, id);
+    const datas = await getDetailsProject(id);
 
     return <DetailsProjectClient datas={datas} />;
 };

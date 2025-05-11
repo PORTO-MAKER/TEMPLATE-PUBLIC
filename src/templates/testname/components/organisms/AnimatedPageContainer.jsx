@@ -1,4 +1,4 @@
-import { pageTransition } from "@/contributors/testname/utils";
+import { pageTransition } from "@/templates/testname/utils";
 import { motion } from "motion/react";
 
 const AnimatedPageContainer = ({ children }) => {

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { staggerContainer } from "@/contributors/testname/utils";
+import { staggerContainer } from "@/templates/testname/utils";
 
 const AnimatedList = ({ children, className, delay = 0 }) => {
     return (

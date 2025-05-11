@@ -1,13 +1,8 @@
-import { getUser } from "@/contributors/testname/utils";
 import { Navbar, Footer } from "../organisms";
-import { headers } from "next/headers";
+import { UserAccountService } from "@/services";
 
 const Layout = async ({ children }) => {
-    const headersList = await headers();
-    // const host = headersList.get("host");
-    const host = "testbug.portoku.live";
-
-    const datas = await getUser(host);
+    const datas = await UserAccountService();
 
     return (
         <div className="w-full min-h-svh">

@@ -1,4 +1,4 @@
-import { Spinner } from "@/contributors/testname/components/atoms";
+import { Spinner } from "@/templates/testname/components/atoms";
 
 const Loading = () => {
     return (

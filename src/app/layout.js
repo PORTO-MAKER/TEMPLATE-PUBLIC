@@ -1,8 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Layout } from "@/contributors/testname/components/templates";
-import { headers } from "next/headers";
-import { getUser } from "@/contributors/testname/utils";
+import { Layout } from "@/templates/testname/components/templates";
+import { UserAccountService } from "@/services";
 
 const poppins = Poppins({
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -11,9 +10,8 @@ const poppins = Poppins({
 });
 
 export async function generateMetadata() {
-    const headersList = await headers();
-    const host = headersList.get("host");
-    const datas = await getUser(host);
+    const datas = await UserAccountService();
+    const host = "testbug.portoku.live";
 
     return {
         title: {

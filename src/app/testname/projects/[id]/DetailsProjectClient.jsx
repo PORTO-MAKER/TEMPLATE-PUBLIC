@@ -1,6 +1,6 @@
 "use client";
 
-import { Carousel } from "@/contributors/testname/components/molecules";
+import { Carousel } from "@/templates/testname/components/molecules";
 import Link from "next/link";
 
 const DetailsProjectClient = ({ datas }) => {

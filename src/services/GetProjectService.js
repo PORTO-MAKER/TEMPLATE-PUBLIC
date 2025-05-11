@@ -1,8 +1,8 @@
 import { GET_DATA } from "../api";
 
-export const GetAllProjectUserService = async (username) => {
+export const GetAllProjectUserService = async () => {
     try {
-        const response = await GET_DATA(`visitor/${username}/projects`);
+        const response = await GET_DATA(`visitor/testbug/projects`);
 
         return response.data.data.userProjectData;
     } catch (err) {
@@ -10,9 +10,9 @@ export const GetAllProjectUserService = async (username) => {
     }
 };
 
-export const GetDetailsProjectUserService = async (username, id) => {
+export const GetDetailsProjectUserService = async (id) => {
     try {
-        const response = await GET_DATA(`visitor/${username}/projects/${id}`);
+        const response = await GET_DATA(`visitor/testbug/projects/${id}`);
         return response.data.data;
     } catch (err) {
         console.log(err);

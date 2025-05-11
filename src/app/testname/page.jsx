@@ -1,12 +1,8 @@
-import { HomeClientOne } from "@/contributors/testname/components/templates";
-import { getUser } from "@/contributors/testname/utils";
-import { headers } from "next/headers";
+import { UserAccountService } from "@/services";
+import { HomeClientOne } from "@/templates/testname/components/templates";
 
 const Home = async () => {
-    const headersList = await headers();
-    const host = headersList.get("host");
-
-    const datas = await getUser(host);
+    const datas = await UserAccountService();
 
     return <HomeClientOne account={datas} />;
 };

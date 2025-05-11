@@ -2,11 +2,8 @@
 
 import Link from "next/link";
 import { Navlink } from "../molecules";
-import { useGlobalHooks } from "@/contributors/testname/hooks";
-import {
-    handleButton,
-    navbarPatternOne,
-} from "@/contributors/testname/patterns";
+import { useGlobalHooks } from "@/templates/testname/hooks";
+import { handleButton, navbarPatternOne } from "@/templates/testname/patterns";
 import { RxHamburgerMenu } from "react-icons/rx";
 // import { GoMoon } from "react-icons/go";
 // import { FaRegSun } from "react-icons/fa6";

@@ -5,17 +5,17 @@ import {
     ArrowSkill,
     Timeline,
     Card,
-} from "@/contributors/testname/components/molecules";
+} from "@/templates/testname/components/molecules";
 import {
     formPattern,
     handleSubmitData,
     skillPattern,
     socmedPattern,
-} from "@/contributors/testname/patterns";
+} from "@/templates/testname/patterns";
 import Link from "next/link";
-import { useGlobalHooks } from "@/contributors/testname/hooks";
+import { useGlobalHooks } from "@/templates/testname/hooks";
 import { SendEmailJsService } from "@/services";
-import { Form } from "@/contributors/testname/components/organisms";
+import { Form } from "@/templates/testname/components/organisms";
 
 const HomeClientOne = ({ account }) => {
     const { loadingButton, setLoadingButton } = useGlobalHooks();

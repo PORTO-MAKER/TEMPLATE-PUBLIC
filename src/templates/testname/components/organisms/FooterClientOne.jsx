@@ -1,6 +1,6 @@
 import { FaCopyright } from "react-icons/fa";
 import Link from "next/link";
-import { socmedPattern } from "@/contributors/testname/patterns";
+import { socmedPattern } from "@/templates/testname/patterns";
 
 const FooterClientOne = ({ account }) => {
     return (

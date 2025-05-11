@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { fadeUp } from "@/contributors/testname/utils";
+import { fadeUp } from "@/templates/testname/utils";
 
 const AnimatedSection = ({ children, className, delay = 0 }) => {
     return (

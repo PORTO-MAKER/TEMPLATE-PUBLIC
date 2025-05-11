@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "motion/react";
-import { popAnimation } from "@/contributors/testname/utils";
+import { popAnimation } from "@/templates/testname/utils";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 const ProjectCard = ({

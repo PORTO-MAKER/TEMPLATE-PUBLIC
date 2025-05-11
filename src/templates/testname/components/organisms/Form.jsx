@@ -1,9 +1,9 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { InputForm } from "@/contributors/testname/components/molecules";
-import { Button } from "@/contributors/testname/components/atoms";
-import { gridClass } from "@/contributors/testname/utils";
+import { InputForm } from "@/templates/testname/components/molecules";
+import { Button } from "@/templates/testname/components/atoms";
+import { gridClass } from "@/templates/testname/utils";
 
 const Form = ({
     dataForm,

@@ -1,4 +1,4 @@
-import { formatDate } from "@/contributors/testname/utils";
+import { formatDate } from "@/templates/testname/utils";
 
 const Timeline = ({ datas }) => {
     return (

@@ -1,6 +1,5 @@
+import { UserAccountService } from "@/services";
 import { ImageResponse } from "next/og";
-import { getUser } from "@/contributors/testname/utils";
-import { headers } from "next/headers";
 
 export const size = {
     width: 1200,
@@ -10,11 +9,7 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
-    const headersList = await headers();
-    // const host = headersList.get("host");
-    const host = "testbug.portoku.live";
-
-    const datas = await getUser(host);
+    const datas = await UserAccountService();
 
     return new ImageResponse(
         (

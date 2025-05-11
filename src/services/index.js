@@ -1,4 +1,3 @@
-import { GetNameUserService } from "@/services/GetNameUserService";
 import { UserAccountService } from "@/services/UserAccountService";
 import {
     GetAllProjectUserService,
@@ -7,7 +6,6 @@ import {
 import { SendEmailJsService } from "@/services/SendEmailJsService";
 
 export {
-    GetNameUserService,
     UserAccountService,
     GetAllProjectUserService,
     GetDetailsProjectUserService,

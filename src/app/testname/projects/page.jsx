@@ -1,7 +1,5 @@
 import { GetAllProjectUserService } from "@/services";
-import { getUser } from "@/contributors/testname/utils";
-import { headers } from "next/headers";
-import { Card } from "@/contributors/testname/components/molecules";
+import { Card } from "@/templates/testname/components/molecules";
 
 export const metadata = {
     title: "Projects",
@@ -10,11 +8,7 @@ export const metadata = {
 };
 
 const ProjectPage = async () => {
-    const headersList = await headers();
-    const host = headersList.get("host");
-
-    const username = await getUser(host);
-    const datas = await GetAllProjectUserService(username.userData.username);
+    const datas = await GetAllProjectUserService();
 
     return (
         <div className="w-full h-full px-2 py-28 lg:px-7 flex flex-col gap-10 bg-[#FAFAFA] items-center dark:bg-[#121212] dark:text-white">
